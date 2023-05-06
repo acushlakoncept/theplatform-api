@@ -57,4 +57,13 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3001' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.perform_caching = false
+
+  Rails.application.routes.default_url_options[:host] = 'localhost:3001'
 end
