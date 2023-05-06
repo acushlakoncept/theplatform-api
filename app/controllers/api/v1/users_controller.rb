@@ -5,17 +5,9 @@ class Api::V1::UsersController < Api::V1::ApiBaseController
 
   def create
     user = User.create(user_create_params)
-    # byebug
+    user.confirm_token = SecureRandom.urlsafe_base64.to_s
+    
     if user.save
-      user.confirm_token = SecureRandom.urlsafe_base64.to_s
-      user.save
-      begin
-        UserMailer.registration_confirmation(user).deliver_now
-      rescue
-        render json: { message: 'Account created successfully! Cannot send email at the moment' }
-        return
-      end
-
       render json: { message: 'Account created successfully! Check your email to activate your account' },
               status: :created
     else

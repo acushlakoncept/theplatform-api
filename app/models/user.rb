@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_confirmation_mail
   has_secure_password
 
   USER = 'user'.freeze
@@ -25,8 +26,8 @@ class User < ApplicationRecord
     self.slug = "#{full_name.parameterize}-#{SecureRandom.hex(2)}"
   end
 
-  def set_ref_url
-    
+  def send_confirmation_mail
+    ConfirmEmailJob.perform_later(self)
   end
 
 end
