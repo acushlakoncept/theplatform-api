@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      .mail_container {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        leading: -0.5rem;
+        font-size: 18px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .mail_container .logo {
+        margin: 20px 0;
+      }
+
+      .mail_container h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .mail_container p {
+        margin-bottom: 20px;
+      }
+
+      .mail_container button {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: #00a8ff;
+        padding: 2px 8px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div className="mail_container">
+        <img src="https://res.cloudinary.com/acushlakoncepts/image/upload/v1683382315/logo_hwr97k.png" alt="ThePlatform" className="logo" />
+        <h1>Welcome to The Platform!</h1>
+        <p>Thank you for signing up. Please verify your email address by clicking the following link:</p>
+        <button><a href="<%= @url %>">Confirm my account</a></button>
+        <p>If you are having any issues with your account, please don&apos;t hesitate to contact us by replying to this mail.</p>
+      </div>
+      <div className="footer">
+          <p>Thanks</p>
+          <p>The Platform</p>
+      </div>
+  </body>
+</html>
