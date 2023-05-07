@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-  include Response
   include ExceptionHandler
   rescue_from ActiveRecord::RecordNotDestroyed, with: :not_destroyed
 

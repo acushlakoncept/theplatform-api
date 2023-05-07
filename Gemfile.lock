@@ -192,6 +192,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jwt
   listen (~> 3.3)
+  nokogiri
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
