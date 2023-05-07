@@ -2,6 +2,11 @@ environment_variables: &environment_variables
   app_name: "ThePlatform: API"
   sendgrid_key_id: <%= ENV['SENDGRID_KEY_ID'] %>
   sendgrid_password: <%= ENV['SENDGRID_PASSWORD'] %>
+  sendgrid_username: <%= ENV['SENDGRID_USERNAME'] %>
+  sendgrid_address: <%= ENV['SENDGRID_ADDRESS'] %>
+  sendgrid_domain: <%= ENV['SENDGRID_DOMAIN'] %>
+  sendgrid_port: <%= ENV['SENDGRID_PORT'] %>
+  smtp_host: <%= ENV['SMTP_HOST'] %>
   frontend_public_url: <%= ENV['FRONTEND_URL_PUBLIC'] %>
   frontend_local_url: <%= ENV['FRONTEND_URL_LOCAL'] %>
 

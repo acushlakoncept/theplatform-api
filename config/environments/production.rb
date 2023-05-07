@@ -120,4 +120,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  config.action_mailer.default_url_options = { :host => APP_CONFIG.smtp_host }
+  config.action_mailer.asset_host = config&.action_controller.asset_host || "http://localhost:3001"
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+      :address => APP_CONFIG.sendgrid_address,
+      :port => APP_CONFIG.sendgrid_port || 587,
+      :authentication => :plain,
+      :user_name => APP_CONFIG.sendgrid_username,
+      :password => APP_CONFIG.sendgrid_password,
+      :enable_starttls_auto => true
+  }
 end
+
