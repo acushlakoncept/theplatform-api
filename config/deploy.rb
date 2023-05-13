@@ -44,3 +44,4 @@ set :keep_releases, 5
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rvm_ruby_version, '3.0.0'
 set :passenger_restart_with_touch, true
+load 'deploy/assets'
