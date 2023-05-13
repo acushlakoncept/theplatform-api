@@ -47,3 +47,6 @@ gem 'active_model_serializers'
 gem 'airbrake', '~> 13.0'
 gem 'nokogiri'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'execjs'
+gem 'therubyracer', platforms: :ruby
