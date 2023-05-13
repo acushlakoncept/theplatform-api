@@ -3,13 +3,11 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server "44.203.67.109", user: "ubuntu", roles: %w{app db web}, my_property: :my_value
+# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-server "44.203.67.109", user: "ubuntu", roles: %w{web app db}
+# server "db.example.com", user: "deploy", roles: %w{db}
 
-# role :app, %w{ubuntu@44.203.67.109}
-# role :web, %w{ubuntu@44.203.67.109}
-# role :db,  %w{ubuntu@44.203.67.109}
+
 
 # role-based syntax
 # ==================
@@ -43,11 +41,11 @@ server "44.203.67.109", user: "ubuntu", roles: %w{web app db}
 #
 # Global options
 # --------------
- set :ssh_options, {
-   keys: %w(~/.ssh/platformapi.pem),
-   forward_agent: true,
-   auth_methods: %w(publickey)
- }
+#  set :ssh_options, {
+#    keys: %w(/home/user_name/.ssh/id_rsa),
+#    forward_agent: false,
+#    auth_methods: %w(password)
+#  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
@@ -61,4 +59,3 @@ server "44.203.67.109", user: "ubuntu", roles: %w{web app db}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-# set :ssh_options, { forward_agent: true }
