@@ -18,7 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -33,14 +33,17 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.4'  
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
   gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'active_model_serializers'
 gem 'airbrake', '~> 13.0'
-gem "nokogiri"
-
+gem 'nokogiri'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
