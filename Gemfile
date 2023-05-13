@@ -33,11 +33,12 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.4'  
+  gem 'capistrano', '~> 3.4'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
@@ -49,4 +50,4 @@ gem 'nokogiri'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'execjs'
-gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

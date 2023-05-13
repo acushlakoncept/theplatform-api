@@ -83,6 +83,9 @@ GEM
       sshkit (>= 1.9.0)
     capistrano-bundler (2.1.0)
       capistrano (~> 3.1)
+    capistrano-figaro-yml (1.0.5)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2, >= 1.2.0)
     capistrano-passenger (0.2.1)
       capistrano (~> 3.0)
     capistrano-rails (1.6.2)
@@ -115,14 +118,12 @@ GEM
       activesupport (>= 5.0.0)
     jsonapi-renderer (0.2.2)
     jwt (2.7.0)
-    libv8 (3.16.14.19)
-    libv8 (3.16.14.19-x86_64-linux)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.20.0)
+    loofah (2.21.2)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
+      nokogiri (>= 1.12.0)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -147,9 +148,7 @@ GEM
       net-protocol
     net-ssh (7.1.0)
     nio4r (2.5.9)
-    nokogiri (1.14.3-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-linux)
+    nokogiri (1.14.4-arm64-darwin)
       racc (~> 1.4)
     pg (1.5.3)
     puma (5.6.5)
@@ -191,7 +190,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree3 (0.7.1)
-    ref (2.0.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     spring (4.1.1)
@@ -205,10 +203,7 @@ GEM
     sshkit (1.21.4)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
-    thor (1.2.1)
+    thor (1.2.2)
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -218,9 +213,7 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
-  arm64-darwin-21
   arm64-darwin-22
-  x86_64-linux
 
 DEPENDENCIES
   active_model_serializers
@@ -230,6 +223,7 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.4)
   capistrano-bundler
+  capistrano-figaro-yml (~> 1.0.2)
   capistrano-passenger
   capistrano-rails (~> 1.1)
   capistrano-rvm
@@ -252,4 +246,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.4.12
+   2.2.3
