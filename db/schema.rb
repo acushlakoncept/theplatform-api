@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 2023_04_25_094420) do
   enable_extension "plpgsql"
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "username", null: false
+    t.string "slug", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
-    t.string "first_name"
-    t.string "last_name"
+    t.string "full_name"
     t.string "referral_url", null: false
     t.string "pronouns"
     t.string "bio", default: ""
@@ -36,7 +35,7 @@ ActiveRecord::Schema.define(version: 2023_04_25_094420) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["referral_url"], name: "index_users_on_referral_url", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
 end
