@@ -45,11 +45,7 @@ class Api::V1::UsersController < ActionController::Base
     # So on the frontend user enters the code and we send it to the API to confirm the email
 
     if user
-      user.email_confirmed = true
-      user.confirm_token = nil
-      user.save!(validate: false)
-      # Let the front end handle the redirection instead
-      # redirect_to "#{ENV['FRONTEND_URL_PUBLIC']}/thank-you", allow_other_host: true
+      user.email_activate
       render json: { message: 'Email confirmed' }, status: :ok
     else
       render json: { error: 'User not found' }, status: :not_found
