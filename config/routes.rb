@@ -6,10 +6,10 @@ Rails.application.routes.draw do
       post 'login', to: 'authentication#create'
 
       resources :users, only: %i[show create] do
-        member do
-          get :confirm_email
+        collection do
+          get 'confirm-email/:confirm_token', action: :confirm_email
         end
-      end
+      end   
     end
   end
 end

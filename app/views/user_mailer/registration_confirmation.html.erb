@@ -46,18 +46,24 @@
         font-size: 18px;
         margin-top: 20px;
       }
+
+      .codeblock {
+        padding: 4px;
+        background: #bdbdbd;
+      }
     </style>
   </head>
 
   <body>
-      <div className="mail_container">
+      <div class="mail_container">
         <img src="https://res.cloudinary.com/acushlakoncepts/image/upload/v1683382315/logo_hwr97k.png" alt="ThePlatform" className="logo" />
         <h1>Welcome to The Platform!</h1>
-        <p>Thank you for signing up. Please verify your email address by clicking the following link:</p>
-        <button><a href="<%= @url %>">Confirm my account</a></button>
+        <p>Thank you for signing up. Please verify your email address by entering the confirmation code:</p>
+        <!-- <button><a href="<%= @url %>">Confirm my account</a></button> -->
+        <div class="codeblock"><span><%= @user.confirm_token %></span></div>
         <p>If you are having any issues with your account, please don&apos;t hesitate to contact us by replying to this mail.</p>
       </div>
-      <div className="footer">
+      <div class="footer">
           <p>Thanks</p>
           <p>The Platform</p>
       </div>
