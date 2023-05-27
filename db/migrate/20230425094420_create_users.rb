@@ -17,6 +17,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :confirm_token
       t.string :phone, null: false, default: ''
       t.string :photo, null: false, default: ''
+      t.integer :account_type, null: false, default: 1
 
       t.timestamps
     end

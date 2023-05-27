@@ -6,8 +6,12 @@ class User < ApplicationRecord
 
   USER = 'user'.freeze
   ADMIN = 'admin'.freeze
+  CLIENT = 'client'.freeze
+  FREELANCER = 'freelancer'.freeze
+  ENTERPRISE = 'enterprise'.freeze
 
   enum role: { USER => 0, ADMIN => 1 }, _prefix: true
+  enum account_type: { CLIENT => 0, FREELANCER => 1, ENTERPRISE => 2 }, _prefix: true
 
   validates :password, presence: true, length: { minimum: 8 }, on: :create
   validates :email, presence: true, uniqueness: { message: 'Email already taken' }

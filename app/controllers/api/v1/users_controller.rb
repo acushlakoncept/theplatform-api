@@ -6,7 +6,7 @@ class Api::V1::UsersController < ActionController::Base
 
   def create
 
-    user = User.create(user_params)
+    user = User.create(user_create_params)
     user.confirm_token = SecureRandom.urlsafe_base64.to_s
     if user.save
       render json: { message: 'Account created successfully! Check your email to activate your account' },
@@ -67,11 +67,10 @@ class Api::V1::UsersController < ActionController::Base
     user_params.permit!
     user_params.extract!(:action, :controller)
     user_params.except(:id, :created_at, :updated_at).to_h.with_indifferent_access
-
   end
-  def user_params
-    params.require(:user).permit(:email, :password, :full_name, :role, :full_name, :email, :phone, 
-                                 :token, :pronouns, :bio, :skills, :language, :photo, 
-                                 :email_confirmed, :photo)
-  end
+  # def user_params
+  #   params.require(:user).permit(:email, :password, :full_name, :role, :full_name, :email, :phone, 
+  #                                :token, :pronouns, :bio, :skills, :language, :photo, 
+  #                                :email_confirmed, :photo, :account_type)
+  # end
 end
