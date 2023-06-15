@@ -1,0 +1,2 @@
+echo "Running App"
+rails s -p 3001
